@@ -9,14 +9,14 @@
 {{view Ember.TextField valueBinding="ask" placeholder="Ask for gifts"}}
 
 <label>Your Name</label>
-{{view Ember.TextField valueBinding="yourName" placeholder="Enter your name"}}
+{{view Ember.TextField valueBinding="author" placeholder="Enter your name"}}
 
 <div class="wishes">
   <h5>Add a gift</h5>
   {{view Ember.TextField valueBinding="newGift.name" placeholder="e.g., NERF gun"}}
 
   <div>
-    <input type="button" value="Add" class="btn btn-primary" {{action add}}>
+    <input type="button" value="Add" class="btn btn-primary" {{action addGift}}>
   </div>
 
   <h4>Wishes</h4>
@@ -26,7 +26,7 @@
       {{#each gifts}}
         <li>
           {{name}}
-          <button class="btn btn-danger btn-mini" {{action deleteGift this}}>del</button>
+          <button class="btn btn-danger btn-mini" {{action deleteGift this}}>Delete</button>
         </li>
       {{/each}}
     </ul>
