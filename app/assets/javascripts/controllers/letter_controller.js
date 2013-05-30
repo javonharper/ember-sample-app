@@ -9,11 +9,15 @@ App.LetterController = Em.ObjectController.extend({
   },
 
   reset: function() {
-    this.set('newGift', App.Gift.createRecord());
+    this.set('newGift', this.transaction.createRecord(App.Gift, {}));
   },
 
   sendToSanta: function() {
-    console.log('should persist this');
+    this.transaction.commit();
+  },
+
+  cancelLetter: function() {
+    this.transaction.rollback();  
   },
 
   deleteGift: function(gift) {
