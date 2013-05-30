@@ -1,5 +1,4 @@
 class Letter < ActiveRecord::Base
-  attr_accessible :ask, :name, :pitch
-
+  attr_accessible :ask, :author, :pitch
   has_many :gifts
 end
